@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<!-- 
+Copyright (c) 2017 chenixga and [contributors] http://chenixga.atspace.cc/ff/ff5se_20.html
+All rights reserved. 
+-->
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<title>Final Fantasy V Save Editor</title>
+<style type='text/css'>
+body {
+    font-family: monospace;
+}
+</style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="ff5se_21.mini.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<h><b>Final Fantasy V Save Editor</b> by chenixga</h>
+<div class='save-bin-input'>
+	<form action='#' onsubmit='return false;'>
+	<div class='file-select'>
+	    save.bin file:<input type='file' id='file-input' style='width: 170px;'/>
+	    File#<input type="radio" name="file-number" value="1" checked="checked">1</input>
+			<input type="radio" name="file-number" value="2">2</input>
+			<input type="radio" name="file-number" value="3">3</input>
+			<input type="radio" name="file-number" value="4">4</input>
+			<input type="radio" name="file-number" value="5">5</input>		
+		<input type='button' id='action' value='Load' onclick='loadFile();'/>
+		<input type='button' id='save'   value='Save' onclick='saveFile();'/></div>
+    <div class='save-options'>
+		AllJobsABP:<input type='input'  id='all-jobs-abp' style='width: 5em;' maxlength='5'/>
+		AllItems:<input type='input'    id='all-items' style='width: 2em;' maxlength='2'/>
+		AllMagic:<input type='checkbox' id='all-magic'/>
+		Bestiary. <!-- <input type='checkbox' id='bestiary' checked='checked'/> -->
+		AllSlain:<input type='input'    id='all-slain' style='width: 3em;' maxlength='3'/></div>
+	</form>
+<div>
+<div id='description' class='description'>
+	<li><b>&uarr;</b> Click on the upper-left corner button to open the file brower to select the save.bin file.</li>
+  <!-- <ul style="list-style: none;">  </ul> -->
+	<li style='margin-left: 36px;'>On Windows, the save.bin could be found at C:\Users\{user}\AppData\Local\FFV_Game\{###}</li>
+	<li style='margin-left: 36px;'>On Android, the save.bin could be found at /data/data/com.squre_enix.Android_googleplay.FFV_GP/files/</li>
+	<li>Select File# 1, 2, 3, 4, or 5</li>
+	<li>To master all jobs, put some big number in AllJobsABP</li>
+	<li>To learn all magic/skills, check AllMagic</li>
+	<li>Click on the <b>Load</b> button to edit the file</li>
+	<li>Click on the <b>Save</b> button to save the edited save.bin to your browser download directory</li>
+	<p>-chenixga</p>
+</div>
+<div id='ff5-file' class='ff5-file' style='display: none;'>
+	<ul id='menu' class='menu' style='list-style: none;'></ul>
+    <div id='status'></div>
+    <p>Gill: <input id='Gill'/></p>
+</div></body></html>
